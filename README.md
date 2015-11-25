@@ -58,5 +58,5 @@ By default z-indexes are set by multiples of 5 (with the exception of `z-index-t
 Examples stored in `/examples` directory. Run `npm example` in the project route.
 
 ## Inspiration
-Inspired by the frustration that comes with working with the endless plugins that contain stooopidly high z-indexes, and this article on [Sitepoint|http://www.sitepoint.com/better-solution-managing-z-index-sass].
+Inspired by the frustration that comes with working with the endless plugins that contain stooopidly high z-indexes, and this article on [Sitepoint](http://www.sitepoint.com/better-solution-managing-z-index-sass).
 
