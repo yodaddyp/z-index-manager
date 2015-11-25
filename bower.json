@@ -1,0 +1,16 @@
+{
+  "name": "z-index-manager",
+  "description": "Sass unility for managing z-indexes",
+  "main": "z-index-manager.scss",
+  "authors": [
+    "Paul Bill"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Sass",
+    "SCSS",
+    "CSS"
+  ],
+  "homepage": "https://github.com/yodaddyp/z-manager",
+  "moduleType": []
+}
