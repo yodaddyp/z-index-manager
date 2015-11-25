@@ -55,7 +55,7 @@ Mixins available: `z-index-above`, `z-index-below`, `z-index-top` and `z-index-b
 By default z-indexes are set by multiples of 5 (with the exception of `z-index-top` and `z-index-bottom`), but you can override this value by updating the `$z-index-buffer` variable.
 
 ## Examples
-Examples stored in `/examples` directory. Run `npm example` in the project route.
+Examples stored in `/examples` directory. Run `npm test` in the project route.
 
 ## Inspiration
 Inspired by the frustration that comes with working with the endless plugins that contain stooopidly high z-indexes, and this article on [Sitepoint](http://www.sitepoint.com/better-solution-managing-z-index-sass).
