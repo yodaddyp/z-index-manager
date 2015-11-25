@@ -1,6 +1,6 @@
 # Z Index Manager
 Simple Sass utility for managing z-indexes with mixins and functions.
-Keeps track of all your layers, and avoid stupidly high z-indexes likee 99999.
+Keeps track of all your layers, and avoid high z-indexes like 99999.
 
 ## Installation
 Installation through bower
@@ -50,7 +50,13 @@ header
   @include z-index-above( footer, header ); // header is saved so can be used as a target later on.
 }
 ```
+Mixins available: `z-index-above`, `z-index-below`, `z-index-top` and `z-index-bottom`.
 
+By default z-indexes are set by multiples of 5 (with the exception of `z-index-top` and `z-index-bottom`), but you can override this value by updating the `$z-index-buffer` variable.
+
+## Examples
+Examples stored in `/examples` directory. Run `npm example` in the project route.
 
 ## Inspiration
+Inspired by the frustration that comes with working with the endless plugins that contain stooopidly high z-indexes, and this article on [Sitepoint|http://www.sitepoint.com/better-solution-managing-z-index-sass].
 
