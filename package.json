@@ -1,7 +1,7 @@
 {
   "name": "z-index-manager",
   "version": "1.0.0",
-  "description": "Sass unility for managing z-indexes",
+  "description": "Sass utility for managing z-indexes",
   "main": "z-index-manager.scss",
   "directories": {
     "example": "examples"
