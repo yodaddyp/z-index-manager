@@ -1,6 +1,6 @@
 {
   "name": "z-index-manager",
-  "description": "Sass unility for managing z-indexes",
+  "description": "Sass utility for managing z-indexes",
   "main": "z-index-manager.scss",
   "authors": [
     "Paul Bill"
