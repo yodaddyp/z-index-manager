@@ -1,0 +1,84 @@
+/**
+ * Example for z-index manager.
+ *
+ * Obviously this is an example of the manager running as it's not recommended to z-index
+ * every HTML element!!!
+ *
+ * For an example to see how it works run `npm example` in the project root directory.
+ *
+ * @author      paul 
+ * @package     z-manager
+ * @date        25/11/15
+ */
+
+@import '../z-index-manager';
+
+$z-indexes: (
+	page: 1,
+  	footer: 5
+);
+
+@debug $z-indexes;
+
+header
+{
+  background: red;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  @include z-index-above( footer, header );
+}
+
+@debug $z-indexes;
+
+.page
+{
+  // Ensure some scrolling
+  height: 3000px;
+
+  @include z-index-bottom( page );
+}
+
+@debug $z-indexes;
+
+footer
+{
+  background: pink;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+
+  z-index: z-index-manager-get( footer );
+}
+
+@debug $z-indexes;
+
+.modal-overlay
+{
+  background: rgba( 0, 0, 0, 0.7 );
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  @include z-index-top( model-overlay );
+}
+
+@debug $z-indexes;
+
+.modal-content
+{
+  background: #fff;
+  bottom: 0;
+  height: 80%;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top:0;
+  width: 80%;
+}

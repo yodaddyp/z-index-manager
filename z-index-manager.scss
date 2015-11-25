@@ -1,0 +1,21 @@
+/**
+ * Simple way of managing z-indexs with mixins and helper functions.
+ *
+ * @author      paul bill (c) 2015
+ * @package     z-manager
+ * @date        25/11/15
+ */
+
+@import 'functions';
+@import 'mixins';
+
+// Layer map that stores the z-index of the layers (should be overridden)
+// Contains example data
+$z-indexes: (
+		header: 10,
+		modal: 20
+)
+!default;
+
+// How many above or below the layer target should the new value be?
+$z-index-buffer: 5 !default;

@@ -1,0 +1,114 @@
+/**
+ * Functions for z-index management
+ *
+ * @author      paul 
+ * @package     z-manager
+ * @date        25/11/15
+ */
+
+/**
+ * Spin through the z-indexes and get the highest value
+ *
+ * @return int
+ */
+@function z-index-manager-highest(){
+
+  $highest: 0;
+
+  @each $layer, $z-index in $z-indexes {
+
+	@if( $z-index > $highest ){
+
+	  $highest: $z-index;
+	}
+  }
+
+  @return $highest;
+};
+
+/**
+ * Spin through the z-indexes and get the lowest value
+ *
+ * @return int
+ */
+@function z-index-manager-lowest(){
+
+  $lowest: 999999999;
+
+  @each $layer, $z-index in $z-indexes {
+
+	@if( $z-index < $lowest ){
+
+	  $lowest: $z-index;
+	}
+  }
+
+  @return $lowest;
+};
+
+/**
+ * Get the z-dex of a layer
+ *
+ * @param $target {string} layer name
+ */
+@function z-index-manager-get( $target ){
+
+  @return map-get( $z-indexes, $target );
+}
+
+/**
+ * Work out the z-index for an element.
+ * By default will assume we want to get the value above the layer target.
+ *
+ * Example:
+ *	z-index-manager( 'modal' ); // 25
+ *
+ * @param $target {string} layer target.
+ * @param $insert-above {boolean} get the z-index valuer of above or below the layer target. Set to false to insert below.
+ * @param $layer {string} if specified will store the new layer in our
+ *
+ * @return {int}
+ */
+@function z-index-manager( $target, $insert-above: true, $layer: '' ){
+
+  $new-z-index: auto;
+  $target-z-index: 1;
+
+  // Get our target from the map of layers
+  @if map-has-key( $z-indexes, $target ){
+
+	$target-z-index: z-index-manager-get( $target );
+
+	@if( $insert-above ){
+
+	  $new-z-index: $target-z-index + $z-index-buffer;
+	}
+
+	@else {
+
+	  $new-z-index: $target-z-index - $z-index-buffer;
+	}
+  }
+
+  // Mapped layer not found test for all layers
+  @elseif( $target == '*' ){
+
+	@if( $insert-above ){
+
+	  $new-z-index: z-index-manager-highest() + 1;
+	}
+
+	@else {
+
+	  $new-z-index: z-index-manager-lowest() - 1;
+	}
+  }
+
+  // Save the layer if layer name is specified.
+  @if( $layer ){
+
+	$z-indexes: map-merge( $z-indexes, ( $layer: $new-z-index ) ) !global;
+  }
+
+  @return $new-z-index;
+}

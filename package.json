@@ -1,0 +1,27 @@
+{
+  "name": "z-index-manager",
+  "version": "1.0.0",
+  "description": "Sass unility for managing z-indexes",
+  "main": "z-manager.scss",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "example": "sass examples/app.scss:examples/app.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yodaddyp/z-manager.git"
+  },
+  "keywords": [
+    "Sass",
+    "SCSS",
+    "CSS"
+  ],
+  "author": "Paul Bill",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yodaddyp/z-manager/issues"
+  },
+  "homepage": "https://github.com/yodaddyp/z-manager#readme"
+}

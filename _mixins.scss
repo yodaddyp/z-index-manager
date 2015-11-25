@@ -1,0 +1,46 @@
+/**
+ * Helper mixins for z-index management
+ *
+ * @author      paul 
+ * @package     z-manager
+ * @date        25/11/15
+ */
+
+/**
+ * Sets the z-index to above a specific target.
+ *
+ * @param $target {string}
+ * @param $layerName {string}
+ */
+@mixin z-index-above( $target, $layer-name ){
+
+  z-index: z-index-manager( $target, true, $layer-name );
+}
+
+/**
+ * Sets the z-index to below a specific target.
+ *
+ * @param $target {string}
+ * @param $layer-name {string}
+ */
+@mixin z-index-below( $target, $layer-name ){
+
+  z-index: z-index-manager( $target, false, $layer-name );
+}
+
+/**
+ * Sets the z-index to above all layers.
+ */
+@mixin z-index-top( $layer-name ){
+
+  z-index: z-index-manager( '*', true, $layer-name );
+}
+
+/**
+ * Sets the z-index to below all layers.
+ */
+@mixin z-index-bottom( $layer-name ){
+
+  z-index: z-index-manager( '*', false, $layer-name );
+}
+
